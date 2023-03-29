@@ -60,6 +60,7 @@ func insert(l *ListNode, val int) *ListNode {
 }
 
 func (l *ListNode) show() {
+	fmt.Print(l.Val, "->")
 	next := l.Next
 	for next.Next != nil {
 		fmt.Print(next.Val, "->")
@@ -70,14 +71,14 @@ func (l *ListNode) show() {
 
 func main() {
 	l1_nums := []int{2, 4, 3}
-	l1 := &ListNode{}
-	for _, v := range l1_nums {
+	l1 := &ListNode{Val: l1_nums[0]}
+	for _, v := range l1_nums[1:] {
 		l1 = insert(l1, v)
 	}
 	l1.show()
 	l2_nums := []int{5, 6, 4}
-	l2 := &ListNode{}
-	for _, v := range l2_nums {
+	l2 := &ListNode{Val: l2_nums[0]}
+	for _, v := range l2_nums[1:] {
 		l2 = insert(l2, v)
 	}
 	l2.show()
