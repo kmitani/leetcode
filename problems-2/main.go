@@ -34,14 +34,14 @@ func moveNext(l *ListNode) *ListNode {
 		l = l.Next
 	} else {
 		l.Val = 0
-		l.Next = nil
 	}
 	return l
 }
 
 func addVal(l1, l2 *ListNode, carry int) (val, carryNext int) {
-	val = (l1.Val + l2.Val + carry) % 10
-	carryNext = (l1.Val + l2.Val + carry) / 10
+	sum := (l1.Val + l2.Val + carry)
+	val = sum % 10
+	carryNext = sum / 10
 	return val, carryNext
 }
 
